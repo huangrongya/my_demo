@@ -4,6 +4,7 @@ import com.bifrost.demo.comm.ResultModel;
 import com.bifrost.demo.dao.entity.User;
 import com.bifrost.demo.dto.UserRequest;
 import com.bifrost.demo.service.IUserService;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,10 +25,16 @@ public class UserController {
         return ResultModel.ok().put("data", user);
     }
 
+    @PostMapping("/page/info")
+    public ResultModel queryUserByPageInfo(@Valid @RequestBody UserRequest request) {
+        PageInfo pageInfo = userService.queryUserByPageInfo(request);
+        return ResultModel.ok().put("data", pageInfo);
+    }
+
     @PostMapping("/page")
     public ResultModel queryUserByPage(@Valid @RequestBody UserRequest request) {
-        PageInfo pageInfo = userService.queryUserByPage(request);
-        return ResultModel.ok().put("data", pageInfo);
+        Page page = userService.queryUserByPage(request);
+        return ResultModel.ok().put("data", page);
     }
 
     @PutMapping("/add")

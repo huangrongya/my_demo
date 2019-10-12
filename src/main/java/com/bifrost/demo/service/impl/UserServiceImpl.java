@@ -4,6 +4,7 @@ import com.bifrost.demo.dao.entity.User;
 import com.bifrost.demo.dao.mapper.UserMapper;
 import com.bifrost.demo.dto.UserRequest;
 import com.bifrost.demo.service.IUserService;
+import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public PageInfo queryUserByPage(UserRequest request) {
+    public PageInfo queryUserByPageInfo(UserRequest request) {
         PageInfo<User> pageInfo = PageHelper.startPage(request.getPageNum(), request.getPageSize()).doSelectPageInfo(()->userMapper.selectAll());
         return pageInfo;
     }
@@ -33,5 +34,11 @@ public class UserServiceImpl implements IUserService {
         user.setName(request.getName());
         user.setAge(request.getAge());
         userMapper.insert(user);
+    }
+
+    @Override
+    public Page queryUserByPage(UserRequest request) {
+        Page<User> page = PageHelper.startPage(request.getPageNum(), request.getPageSize()).doSelectPage(()->userMapper.selectAll());
+        return page;
     }
 }
