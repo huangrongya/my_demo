@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bifrost.demo.dao.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.bifrost.demo.dao.entity.User">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="NCHAR" property="name" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, rtrim(name) "name", age
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from [user]
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from [user]
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from [user]
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.bifrost.demo.dao.entity.User">
+    insert into [user] ("name", age)
+    values (#{name,jdbcType=NCHAR}, #{age,jdbcType=NCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.bifrost.demo.dao.entity.User">
+    insert into [user]
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        "name",
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=NCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=NCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.bifrost.demo.dao.entity.User">
+    update [user]
+    <set>
+      <if test="name != null">
+        "name" = #{name,jdbcType=NCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=NCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.bifrost.demo.dao.entity.User">
+    update [user]
+    set "name" = #{name,jdbcType=NCHAR},
+      age = #{age,jdbcType=NCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
