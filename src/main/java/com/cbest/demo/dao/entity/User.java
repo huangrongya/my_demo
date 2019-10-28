@@ -1,4 +1,4 @@
-package com.bifrost.demo.dao.entity;
+package com.cbest.demo.dao.entity;
 
 import lombok.Data;
 

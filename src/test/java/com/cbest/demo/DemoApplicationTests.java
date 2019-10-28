@@ -1,4 +1,4 @@
-package com.bifrost.demo;
+package com.cbest.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

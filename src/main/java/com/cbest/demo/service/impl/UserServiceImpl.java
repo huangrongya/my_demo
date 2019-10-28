@@ -1,9 +1,9 @@
-package com.bifrost.demo.service.impl;
+package com.cbest.demo.service.impl;
 
-import com.bifrost.demo.dao.entity.User;
-import com.bifrost.demo.dao.mapper.UserMapper;
-import com.bifrost.demo.dto.UserRequest;
-import com.bifrost.demo.service.IUserService;
+import com.cbest.demo.dao.entity.User;
+import com.cbest.demo.dao.mapper.UserMapper;
+import com.cbest.demo.dto.UserRequest;
+import com.cbest.demo.service.IUserService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;

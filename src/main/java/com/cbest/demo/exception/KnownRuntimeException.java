@@ -1,4 +1,4 @@
-package com.bifrost.demo.exception;
+package com.cbest.demo.exception;
 
 import java.util.Formatter;
 

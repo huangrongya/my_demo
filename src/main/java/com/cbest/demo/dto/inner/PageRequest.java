@@ -1,4 +1,4 @@
-package com.bifrost.demo.dto.inner;
+package com.cbest.demo.dto.inner;
 
 import lombok.Data;
 

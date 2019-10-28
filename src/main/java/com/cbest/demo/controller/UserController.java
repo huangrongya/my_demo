@@ -1,9 +1,9 @@
-package com.bifrost.demo.controller;
+package com.cbest.demo.controller;
 
-import com.bifrost.demo.comm.ResultModel;
-import com.bifrost.demo.dao.entity.User;
-import com.bifrost.demo.dto.UserRequest;
-import com.bifrost.demo.service.IUserService;
+import com.cbest.demo.comm.ResultModel;
+import com.cbest.demo.dao.entity.User;
+import com.cbest.demo.dto.UserRequest;
+import com.cbest.demo.service.IUserService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;

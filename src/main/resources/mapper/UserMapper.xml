@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bifrost.demo.dao.mapper.UserMapper">
-  <resultMap id="BaseResultMap" type="com.bifrost.demo.dao.entity.User">
+<mapper namespace="com.cbest.demo.dao.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.cbest.demo.dao.entity.User">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="NCHAR" property="name" />
     <result column="age" jdbcType="INTEGER" property="age" />
@@ -24,11 +24,11 @@
     delete from [user]
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.bifrost.demo.dao.entity.User">
+  <insert id="insert" parameterType="com.cbest.demo.dao.entity.User">
     insert into [user] ("name", age)
     values (#{name,jdbcType=NCHAR}, #{age,jdbcType=NCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.bifrost.demo.dao.entity.User">
+  <insert id="insertSelective" parameterType="com.cbest.demo.dao.entity.User">
     insert into [user]
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -53,7 +53,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.bifrost.demo.dao.entity.User">
+  <update id="updateByPrimaryKeySelective" parameterType="com.cbest.demo.dao.entity.User">
     update [user]
     <set>
       <if test="name != null">
@@ -65,7 +65,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.bifrost.demo.dao.entity.User">
+  <update id="updateByPrimaryKey" parameterType="com.cbest.demo.dao.entity.User">
     update [user]
     set "name" = #{name,jdbcType=NCHAR},
       age = #{age,jdbcType=NCHAR}

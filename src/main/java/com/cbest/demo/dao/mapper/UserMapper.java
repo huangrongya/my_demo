@@ -1,6 +1,6 @@
-package com.bifrost.demo.dao.mapper;
+package com.cbest.demo.dao.mapper;
 
-import com.bifrost.demo.dao.entity.User;
+import com.cbest.demo.dao.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.bifrost.demo.aop;
+package com.cbest.demo.aop;
 
 import ch.qos.logback.core.CoreConstants;
 import com.alibaba.fastjson.JSONObject;

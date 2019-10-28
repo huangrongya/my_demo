@@ -1,6 +1,6 @@
-package com.bifrost.demo.dto;
+package com.cbest.demo.dto;
 
-import com.bifrost.demo.dto.inner.PageRequest;
+import com.cbest.demo.dto.inner.PageRequest;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
